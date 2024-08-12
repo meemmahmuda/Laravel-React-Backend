@@ -1,0 +1,57 @@
+Installation
+composer create-project laravel/laravel example-app
+Rename at .env
+DB_CONNECTION=MySQL
+
+For Authintication
+composer require laravel/Jetstream
+php artisan jetstream:install livewire
+
+npm install
+php artisan migrate
+
+If there need any correction
+php artisan migrate:rollback
+
+To create a table
+php artisan make:model Category -m
+
+To create controller (insert, update, delete)
+php artisan make:controller CategoriesController -r
+
+To see route list
+php artisan route:list
+
+To install vue
+composer require laravel/ui
+php artisan ui vue
+npm install @vitejs/plugin-vue --save-dev
+npm install
+npm run dev
+
+Import vue in vite.config.js
+
+import { defineConfig } from 'vite';
+import laravel from 'laravel-vite-plugin';
+import vue from '@vitejs/plugin-vue';
+
+export default defineConfig({
+    plugins: [
+        laravel({
+            input: [
+                'resources/sass/app.scss',
+                'resources/js/app.js',
+            ],
+            refresh: true,
+        }),
+        vue(),
+    ],
+    resolve: {
+        alias: {
+            vue: 'vue/dist/vue.esm-bundler.js',
+        },
+    },
+});
+
+
+

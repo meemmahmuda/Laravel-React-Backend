@@ -1,0 +1,6 @@
+git clone
+composer install/update
+rename .env
+create MySQL database
+php artisan migrate
+php artisan serve
